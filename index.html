@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>爱心特效</title>
+
+		<style>
+			html,
+			body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				background: #000;
+			}
+
+			canvas {
+				position: absolute; 
+				width: 100%;
+				height: 100%;
+			}
+
+			.photobox {
+				width: 500px;
+				height: 100%;
+				margin: 0px auto;
+			}
+
+			.photo {
+				width: 100%;
+				height: 450px;
+				position: relative;
+				top: 28%;
+			}
+			.img{
+				width: 200px;
+				height: 200px;
+				background: url(images/2.jpg) no-repeat;
+				background-position: -100px 0px;
+				border-radius: 50%;
+				position: absolute;
+				top: 130px;
+				left: 150px;
+				box-shadow: 0 0 30px 10px white;
+				overflow: hidden;
+				-webkit-transition-property: -webkit-transform;
+				-webkit-transition-duration: 1s;
+				-moz-transition-property: -moz-transform;
+				-moz-transition-duration: 1s;
+				-webkit-animation: rotate 10s linear infinite;
+				-moz-animation: rotate 10s linear infinite;
+				-o-animation: rotate 10s linear infinite;
+				animation: rotate 10s linear infinite;
+			}
+			
+			@-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg)}
+			    to{-webkit-transform: rotate(360deg)}
+			}
+			@-moz-keyframes rotate{from{-moz-transform: rotate(0deg)}
+			    to{-moz-transform: rotate(359deg)}
+			}
+			@-o-keyframes rotate{from{-o-transform: rotate(0deg)}
+			    to{-o-transform: rotate(359deg)}
+			}
+			@keyframes rotate{from{transform: rotate(0deg)}
+			    to{transform: rotate(359deg)}
+			}
+
+			@media screen and (max-width: 1000px) {
+				.photobox {
+					width: 1000px;
+					height: 100%;
+					margin: 0px auto;
+				}
+				.img{
+					top: 130px;
+					left: 400px;
+				}
+			}
+		</style>
+
+	</head>
+	<body>
+
+
+		<div class="photobox">
+			<div class="photo"><canvas id="pinkboard"></canvas><div class="img"></div></div>
+		</div>
+
+		<script src="js/aixin.js"></script>
+	</body>
+</html>
